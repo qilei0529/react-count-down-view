@@ -1,0 +1,26 @@
+{
+  "name": "react-count-down-view",
+  "version": "1.0.0",
+  "description": "a simple react component for count down & trigger end.",
+  "main": "lib/index.js",
+  "keywords": [
+    "react"
+  ],
+  "scripts": {
+    "babel": "babel src/ -d lib/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qilei0529/react-count-down-view.git"
+  },
+  "files": [
+    "lib/"
+  ],
+  "author": "qilei",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.16.0"
+  }
+}
