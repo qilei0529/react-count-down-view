@@ -1,6 +1,6 @@
 {
   "name": "react-count-down-view",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a simple react component for count down & trigger end.",
   "main": "lib/index.js",
   "keywords": [

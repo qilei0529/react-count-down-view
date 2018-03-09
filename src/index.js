@@ -23,7 +23,7 @@ class CountDownView extends Component {
                 let second = this.state.second || 0
                 second = second - sec
 
-                if (second < 0) {
+                if (second <= 0) {
                     let trigger = this.props.trigger
                     trigger && trigger()
                     Counter.unbindCounter(name)

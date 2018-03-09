@@ -37,6 +37,6 @@ a simple react component for count down
 
     <CountDownView name="count-two" second={4} trigger={onCountEnd} view={CustomView}/>
 
-    // you set your custom count view by set 'view' props
+    // you can set your custom count view by set 'view' props
 
 ````
