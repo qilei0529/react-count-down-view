@@ -2,6 +2,10 @@
 
 a simple react component for count down
 
+## Version
+
+    v1.0.3 fix react view switch bug
+
 ## Use
 
     npm install react-count-down-view
