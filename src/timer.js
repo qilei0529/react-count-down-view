@@ -8,15 +8,18 @@ let LOOP_DELAY = 1000
 
 function reduceHook() {
 
-    let second = checkSecond()
+    let step = checkSecond()
     let count = 0
     for (let key in _timer_hook) {
         let hook = _timer_hook[key]
-
         if (hook) {
             ++count
-            if (second > 0) {
-                hook && hook(second)
+            if (step > 0 && hook.second > 0) {
+                hook.second -= step
+                if (hook.second < 0) {
+                    hook.second = 0
+                }
+                hook.callback && hook.callback(hook.second)
             }
         }
     }
@@ -66,9 +69,12 @@ function startLoop() {
     }, LOOP_DELAY);
 }
 
-function bindCounter(name, callback) {
+function bindCounter({ name, second, callback }) {
     if (name) {
-        _timer_hook[name] = callback
+        _timer_hook[name] = {
+            callback: callback,
+            second: second
+        }
         startLoop()
     }
 }
@@ -85,7 +91,16 @@ function unbindCounter(name) {
     }
 }
 
+function checkHookExist(name) {
+    if (_timer_hook[name]) {
+        return _timer_hook[name]
+    } else {
+        return null
+    }
+}
+
 export default {
     bindCounter,
-    unbindCounter
+    unbindCounter,
+    checkHookExist
 }
