@@ -42,6 +42,8 @@ function checkLoop() {
 
         if (flag) {
             checkLoop()
+        } else {
+            _timer = null
         }
     }, LOOP_DELAY);
 }
